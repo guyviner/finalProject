@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>FinalProject</title>
+    <title><%= content_for?(:title) ? yield(:title) : '1111 Beach' %></title>
     <%= csrf_meta_tags %>
+    <%= action_cable_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato" />
   </head>
 
   <body>
+    <%= notice || alert %>
     <%= yield %>
   </body>
 </html>
